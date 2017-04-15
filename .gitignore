@@ -1,0 +1,31 @@
+*.zip
+
+# config files
+*configs/*.conf
+*.conf
+
+# logrotate status file
+*.status
+ 
+# vim
+#
+*.swp
+
+# OSX
+#
+.DS_Store
+
+# node
+#
+*node_modules/
+*/dist/
+
+# nwjs build
+builder/
+
+# local logs
+*.log
+*.log.*
+
+# crash log
+core
