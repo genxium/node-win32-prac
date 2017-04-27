@@ -76,4 +76,9 @@ for (let i = 0; i < targetWindowList.length; ++i) {
   console.log('Found target window ' + target.windowName + ':' + target.windowClassName);
   user32.PostMessageA(target.windowId, WM_KEYDOWN, VK_F5, 0);
   user32.PostMessageA(target.windowId, WM_KEYUP, VK_F5, 0);
+
+  setTimeout(function() {
+    user32.PostMessageA(target.windowId, WM_KEYDOWN, VK_F6, 0);
+    user32.PostMessageA(target.windowId, WM_KEYUP, VK_F6, 0);
+  }, 8000);
 }

@@ -39,7 +39,7 @@ const windowProc = ffi.Callback(boolType, [hwndType, lparamType], function(hwnd,
   const name = ref.readCString(buf1, 0);
 
   const isOnScreen = user32.IsWindowVisible(hwnd);
-  if (!isOnScreen) return true;
+  if ('true' != process.env.INCLUDE_INVISIBLE && !isOnScreen) return true;
 
   const buf2 = ref.alloc(dwordType);
   const ret2 = user32.GetWindowThreadProcessId(hwnd, buf2); 
